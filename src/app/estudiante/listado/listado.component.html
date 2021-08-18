@@ -1,0 +1,34 @@
+<section class="vh-100 bg-image" style="background-image: url('http://www.solofondos.com/wp-content/uploads/2015/11/fondo.png');">
+    <div class="container h-100 gradient-custom-3">
+        <div class="row d-flex justify-content-center align-items-center h-50">
+            <div class="col-12 col-md-9 col-lg-7 col-xl-10 mt-4">
+                <div class="card">
+                    <div class="card-body">
+                        <span class="h3">Listado de Estudiantes</span>
+                        <button class="btn btn-dark btn-lg float-right" [routerLink]="['/registro']">Agregar</button>
+                        <h5 style="margin-top: 30px;" *ngIf="usuarios.length == 0">No hay datos para mostrar</h5>
+                        <table *ngIf="usuarios.length > 0" class="table table-striped mt-5">
+                            <thead>
+                                <tr>
+                                    <th>Nombre</th>
+                                    <th>Direccion</th>
+                                    <th>Acciones</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let u of usuarios">
+                                    <td>{{ u.nombre }}</td>
+                                    <td>{{ u.direccion }}</td>
+                                    <td>
+                                        <i class="fas fa-edit fa-lg text-info mr-2" [routerLink]="['/editEstudiante/', u.id]"></i>
+                                        <i (click)="eliminar(u.id)" class="fas fa-trash-alt fa-lg text-danger"></i>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

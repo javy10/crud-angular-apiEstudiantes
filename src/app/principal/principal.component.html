@@ -1,0 +1,25 @@
+<div class="album   ">
+    <div class="col-12 py-4">
+        <h1 class="display-5 text-center font-weight-bold">Estudiantes</h1>
+    </div>
+    <div class="container bg-image " style="background-image: url('http://www.solofondos.com/wp-content/uploads/2015/11/fondo.png');" >
+        
+        <div class="row d-flex justify-content-center align-items-center h-50 row-cols-1 row-cols-sm-2 row-cols-md-3 g-3 gradient-custom-3" > 
+           
+            <div class="col-3 col-md-3 col-lg-3 col-xl-3 mt-4 mb-4 ml-1" *ngFor="let u of usuarios">
+                <div class="card testimonial-card" style="width: 18rem;">
+                    <div class="card-up aqua-gradient"></div>
+                    <div class="avatar mx-auto white">
+                        <img src="https://www.seekpng.com/png/full/356-3562377_personal-user.png" class="rounded-circle img-fluid">
+                    </div>
+                    <div class="card-body text-center">
+                        <h5 style="margin-top: 30px;" *ngIf="usuarios.length == 0">No hay datos para mostrar</h5>
+                        <h5 class="card-title font-weight-bold"> {{u.nombre}}</h5>
+                        <p class="card-text"><i class="fas fa-quote-left"></i>   {{ u.direccion }}</p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
