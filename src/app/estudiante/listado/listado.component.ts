@@ -13,12 +13,9 @@ export class ListadoComponent implements OnInit {
   usuario:estudiante = {} as estudiante;
   usuarios:any;
 
-  constructor(private http: HttpClient, 
-              private activatedRoiuter:ActivatedRoute) { 
-                
-                http.get('https://frozen-meadow-48728.herokuapp.com/todos')
+  constructor(private http: HttpClient, private activatedRoiuter:ActivatedRoute) { 
+    http.get('https://frozen-meadow-48728.herokuapp.com/todos')
     .subscribe(response=>{this.usuarios=response});
-
   }
 
   ngOnInit(): void {
@@ -35,7 +32,7 @@ export class ListadoComponent implements OnInit {
         },
         error => {
           console.log(error);
-        });
+      });
+    }
   }
-}
 }

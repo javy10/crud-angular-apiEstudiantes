@@ -3,7 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { ListadoComponent } from './estudiante/listado/listado.component';
 import { RegistroComponent } from './estudiante/registro/registro.component';
 
-import { PrincipalComponent } from './principal/principal.component';
+import { PrincipalComponent } from './estudiante/principal/principal.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/principal', pathMatch: 'full' },
@@ -17,5 +17,5 @@ const routes: Routes = [
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
-})
+  })
 export class AppRoutingModule { }
